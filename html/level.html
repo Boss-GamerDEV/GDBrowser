@@ -27,6 +27,20 @@
 			<img src="../assets/ok.png" width=20%; class="gdButton center closeWindow">
 		</div>
 	</div>
+		
+			<div class="popup" id="musicDiv">
+		<div class="fancybox bounce center supercenter">
+			<h2 class="smaller center" style="font-size: 5.5vh">Song Info</h2>
+			<p class="bigger center" id="musicInfo" style="line-height: 5vh; margin-top: 1.5vh;">
+				<span class="pre" style="color:lime">[[SONGNAME]]</span>
+				<br>Song: <cy><a class="songlink" href="https://newgrounds.com/audio/listen/[[SONGID]]/" target="_blank">[[SONGNAME]]</a></cy>
+				<br>Song Artist:  <cy><a class="songlink" href="https://[[SONGAUTHOR]].newgrounds.com" target="_blank">[[SONGAUTHOR]]</a></cy>
+				<br>Song ID:  <cy>[[SONGID]]</cy>
+			</p>
+			<img src="../assets/ok.png" width=20%; class="gdButton center closeWindow">
+			<a href="https://newgrounds.com/audio/listen/[[SONGID]]/" target="_blank"><img src="../assets/playsong.png" width=10%; class="gdButton center"></a>
+		</div>
+	</div>
 
 	<div class="popup" id="saveDiv">
 		<div class="fancybox bounce center supercenter">
@@ -87,11 +101,11 @@
 	</div>
 
 	<div class="center" style="width: 70%; margin: 1% auto">
-		<h1 class="pre" style="transform: scale(1.2)">[[NAME]]</h1>
+		<h1 class="pre" style="transform: scale(1.2)">[[NAME]] (<b style=color:green>[[ID]]</b>)</h1>
 	</div>
 
 	<div class="center" style="position:absolute; top: 9%; left: 0%; right: 0%; height: 5%;">
-		<h2 class="pre inline slightlySmaller normalCursor gdButton" id="authorName"><a class="linkButton" id="authorLink" href="../u/[[ACCOUNTID]].">By [[AUTHOR]]</a></h2>
+		<h2 class="pre inline slightlySmaller normalCursor gdButton" id="authorName"><a class="linkButton" id="authorLink" href="../u/[[ACCOUNTID]].">By [[AUTHOR]] (<b style=color:green>[[ACCOUNTID]]</b>)</a></h2>
 		<h2 class="inline slightlySmaller normalCursor sideSpaceC">
 			<img class="inline valign" id="copiedBadge" style="display: none; height: 60%; cursor:help" src="../assets/copied.png" title="Level is a copy or a collaboration">
 			<img class="inline valign" id="largeBadge" style="display: none; height: 60%; margin-left: -7%; cursor:help" src="../assets/large.png" title="Contains more than 40,000 objects">
@@ -138,7 +152,7 @@
 			<h3 id="songNotAllowed" style="display: none; margin-top: 0.5%; color: red">Song is not allowed for use</h3>
 			<h3 id="artistInfo" style="display: none; margin-top: 0.5%"></h3>
 		</div>
-		<a class="songLink" href="https://www.newgrounds.com/audio/listen/[[SONGID]]" target="_blank"><img class="gdButton sideButton" title="Play Song" id="playSong" src="../assets/playsong.png" style="position:absolute; right: 1%; top: 50%; width: 11%; height: auto;"></a>
+		<a href="https://www.newgrounds.com/audio/listen/[[SONGID]]" class="songLink playSongButton" onClick="songClick()" target="_blank"><img class="gdButton sideButton playSongImage" src="../assets/playsong.png" style="position:absolute; right: 1%; top: 50%; width: 11%; height: auto;"></a>
 	</div>
 
 	<div class="center" style="position:absolute; bottom: 5%; left: 0; right: 0">
@@ -152,10 +166,14 @@
 	<div class="levelButtons" style="position:absolute; top: 46%; right: 3.5%; transform: translateY(-50%); height: 75%;">
 		<img class="gdButton sideButton" title="Save level" id="saveButton" src="../assets/plus.png" onclick="$('#saveDiv').show(); saveLevel()"><br>
 		<img class="gdButton sideButton" title="Level Info" id="infoButton"  src="../assets/info.png" onclick="$('#infoDiv').show()"><br>
-		<!-- <img class="gdButton sideButton" title="Rate Level" id="likeButton"  src="../assets/vote.png" onclick="$('#likeDiv').show()"><br> -->
+		<img class="gdButton sideButton" title="Rate Level" id="likeButton"  src="../assets/vote.png" onclick="$('#likeDiv').show()"><br>
 		<a href="./analyze/[[ID]]" id="analyzeLink"><img id="analyzeBtn" title="Analyze Level" class="gdButton sideButton" src="../assets/edit.png"></a><br>
 		<a href="./comments/[[ID]]"><img class="gdButton sideButton" title="View Comments" src="../assets/comment.png"></a><br>
 		<a href="./leaderboard/[[ID]]"><img id="leaderboardbtn" title="View Leaderboard" class="gdButton sideButton" src="../assets/leaderboard.png"></a><br>
+	</div>
+	
+	<div class="levelButtons" style="position:absolute; top: 62%; right: 10.5%; transform: translateY(-50%); height: 75%;">
+	<img class="gdButton sideButton" title="Song Info" id="infoButton"  src="../assets/info.png" style="filter: hue-rotate(290deg);" onclick="$('#musicDiv').show()"><br>
 	</div>
 
 	<div style="position:absolute; top: 2%; left: 1.5%; width: 10%; height: 25%; pointer-events: none">
@@ -170,6 +188,15 @@
 </div>
 
 </body>
+
+<style>
+.dislikerot {
+  filter: saturate(1) contrast(104%) hue-rotate(305deg);
+  transform: rotate(180deg);
+  transform: translate(0px, 20px);
+}
+</style>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="../sizecheck.js?"></script>
 <script>
@@ -188,6 +215,7 @@ function colonize(secs, timeUp) {
 }
 
 if (window.location.href.endsWith('?download')) $('#infoDiv').show()
+if (window.location.href.endsWith('?songinfo')) $('#musicDiv').show()
 
 		let copyMessages = ["ID copied to clipboard", "ID copied x[C]!", "ID copied again!", "ID copied once more!", "ID clipboard to copied!", "ID copied yet again!", "As you wish", "Copy that!", "This one actually works", "You can't play levels, son", "Keep it coming", "Click again, I dare you", "C-C-C-C-COPIED!",
 							"Get a life", "...", "bruh moment", "Etched into thy's memory!", "h", "I feel physical pain", "Play it in GD!", "[[ID]]", "go away", "Every copy costs 2 cents!", "Un-copied!", "Copied++", "C O P I E D", "help me please", "Open GD to play the level!", "pretend you're playing it", "Anotha one!"]

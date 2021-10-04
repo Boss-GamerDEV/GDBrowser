@@ -1,7 +1,7 @@
 
 # GDBrowser
 
-# Rhis is not the original version! the original code is by [GDColon](https://github.com/GDColon/) and link for original repos is [Here](https://github.com/GDColon/GDBrowser/)
+# This is not the original version! the original code is by [GDColon](https://github.com/GDColon/) and link for original repos is [Here](https://github.com/GDColon/GDBrowser/)
   
 
 Uh... so I've never actually used GitHub before this. But I'll try to explain everything going on here.

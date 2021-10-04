@@ -7,6 +7,14 @@
             "twitter": ["https://twitter.com/TheRealGDColon", "twitter"],
             "github": ["https://github.com/GDColon", "github"]
         },
+        
+        {
+            "header": "Remix Creator",
+            "name": "BossGamerTV",
+            "youtube": ["https://youtube.com/channel/bossgamerytshorts", "youtube"],
+            "twitter": ["https://github.com/Boss-GamerDEV", "github"],
+            "github": ["https://boss-url.com", "site"]
+        },
 
         {
             "header": "Accurate Leaderboard",

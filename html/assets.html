@@ -40,7 +40,7 @@
 
 <h1 id="listing" style="margin: 15 0 15 0; text-decoration: underline;"></h1>
 <div id="directories" style="margin-bottom: 20px">
-	<div class="name">⏪ <a href="../">Back</a></div></div>
+	<div class="name">📂 <a href="../">Back</a></div></div>
 <div id="filenames"></div></body>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -51,7 +51,7 @@ if (!window.location.pathname.endsWith('/')) window.location.pathname += "/"
 let path = window.location.pathname.slice(0, -1)
 data = JSON.parse(data)
 $('#listing').html(`Listing for ${path}`)
-data.files.forEach(x => $('#filenames').append(`<div class="name"><a href="./${x}">${x}</a></div>`))
+data.files.forEach(x => $('#filenames').append(`<div class="name">🗄️ <a href="./${x}">${x}</a></div>`))
 data.directories.forEach(x => $('#directories').append(`<div class="name">📁 <a href="./${x}">${x}</a></div>`))
 
 </script>

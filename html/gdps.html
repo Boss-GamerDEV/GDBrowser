@@ -16,15 +16,12 @@
 
 	<div class="popup" id="infoDiv">
 		<div class="fancybox bounce center supercenter" style="width: 90vh">
-			<h2 class="smaller center" style="font-size: 5.5vh">Add server</h2>
+			<h2 class="smaller center" style="font-size: 5.5vh">Info</h2>
 			<p class="bigger center" style="line-height: 5vh; margin-top: 1.5vh; margin-bottom: 2.5vh;">
-				Interested in listing your <cg>private server</cg> on GDBrowser?
-				<a target="_blank" href="https://forms.gle/kncuRqyKykQX42QD7"><ca class="underline">Fill out this form</ca></a>
-				with your <cy>server information</cy> and I'll look into adding it!
 			</p>
 			<p class="bigger center" style="margin-top: 1vh">
-				Please note that I only add <cg>relatively large</cg> servers to the list.
-				Servers which are <cr>inactive</cr> or have <cr>few levels/members</cr> will not be accepted.
+				<cg>Switch the server (Some may be slow).</cg>
+				<cg>Some servers have less options and some have more.</cg>
 			</p>
 			<img src="../assets/ok.png" width=15%; class="gdButton center" onclick="$('.popup').hide()">
 		</div>
@@ -35,7 +32,7 @@
 	<div class="epicbox supercenter gs" style="width: 126vh; height: 80%; pointer-events: none"></div>
 
 	<div class="center" style="position:absolute; top: 8%; left: 0%; right: 0%">
-		<h1 class="pre" id="header">GD Private Servers</h1>
+		<h1 class="pre" id="header">Switch Server</h1>
 	</div> 
 
 	<div style="position:absolute; top: 2%; left: 1.5%; width: 10%; height: 25%; pointer-events: none">
@@ -55,7 +52,7 @@
 	</div>
 
 	<div style="position:absolute; top: 3%; right: 2%; text-align: right; width: 20%;">
-		<img id="plusButton" class="inline gdButton" src="../assets/plus.png" width="25%" onclick="$('#infoDiv').show()">
+		<img id="plusButton" class="inline gdButton" src="../assets/info.png" width="25%" onclick="$('#infoDiv').show()">
 	</div>
 
 </div>
@@ -66,7 +63,7 @@
 <script type="text/javascript" src="../dragscroll.js"></script>
 <script>
 
-let pageSize = 20
+let pageSize = 4
 let page = 1
 let localhost = window.location.hostname == "localhost"
 let host = window.location.host.split(".").slice(-2).join(".")
@@ -97,7 +94,7 @@ Fetch('../api/gdps').then(servers => {
 					</div>
 					
 					<div class="center" style="position:absolute; right: 7%; transform:translateY(-150%); height: 10%">
-						<a href="http://${x.id || ""}${x.id && localhost ? ".x" : ""}${x.id ? "." : ""}${host}"><img style="margin-bottom: 4.5%" class="valign gdButton" src="../assets/view.png" height="105%"></a>
+						<a href="http://${x.id || ""}${x.id && localhost ? ".x" : ""}${x.id ? "." : ""}${host}"><img style="margin-bottom: 4.5%" class="valign gdButton" src="../assets/playserver.png" height="105%"></a>
 					</div>
 				</div>`)
 		})

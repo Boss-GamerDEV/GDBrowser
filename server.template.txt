@@ -33,8 +33,11 @@ The normal template (FOR THE MIDDLE)'
     "pinned": false
   }
   
+  
+  
   More settings:
-   disabled": ["option", "option2"]
-    "onePointNine": true/false,
-    "weeklyLeaderboard": true/false,
-     "demonList": "https://example.com",
+  
+  disabled": ["option", "option2"]
+  "onePointNine": true/false,
+  "weeklyLeaderboard": true/false,
+  "demonList": "https://example.com",

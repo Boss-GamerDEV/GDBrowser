@@ -50,7 +50,8 @@
     <hr id="gdfloor">
     <div id="menuButtons" style="height: 65px; margin: 0 0 8 0;">
         <button class="blankButton menuButton" id="customColors" title="Settings" onclick="$('#settings').show()"><img src="../assets/iconkitbuttons/cog.png" width=60px></button>
-        <button class="blankButton menuButton" id="downloadIcon" title="Download icon"><a id="downloadLink" download="cube_1.png" href=""><img src="../assets/iconkitbuttons/save.png" width=60px></a></button>
+        <button class="blankButton menuButton" id="downloadIcon" title="Download icon"><a id="downloadLink" href=""><img src="../assets/iconkitbuttons/save.png" width=60px></a></button>
+		<button class="blankButton menuButton" id="downloadIcon" title="Open icon"><a target="_blank" id="genLink" href=""><img src="../assets/iconkitbuttons/open.png" width=60px style="filter: hue-rotate(265deg)"></a></button>
         <button class="blankButton menuButton" id="getUserIcon" title="Get player icon"><img src="../assets/iconkitbuttons/steal.png" width=60px></button>
         <button class="blankButton menuButton" id="randomIcon" title="Random Icon"><img src="../assets/iconkitbuttons/shuffle.png" width=60px></button>
         <button class="blankButton menuButton" id="unlockIcon" title="Unlock details"><img id="lock" src="../assets/iconkitbuttons/unlock.png" width=60px></button>
@@ -166,6 +167,7 @@ function generateIcon() {
     let finalURL = `../icon/icon?icon=${selectedIcon}&form=${selectedForm}${noDome ? "&topless=1" : ""}&col1=${selectedCol1}&col2=${selectedCol2}${selectedColG != selectedCol2 ? `&colG=${selectedColG}` : ""}${selectedColW ? `&colW=${selectedColW}` : ""}${enableGlow > 0 ? "&glow=1" : ""}${square ? "&size=auto" : ""}`
     $("#result").attr('src', finalURL).attr('download', `${selectedForm}_${selectedIcon}.png`)
     $("#downloadLink").attr('href', finalURL).attr('download', `${selectedForm}_${selectedIcon}.png`)
+	$("#genLink").attr('href', finalURL).attr('src', `${selectedForm}_${selectedIcon}.png`)
     if (enableGlow == 2) enableGlow = 0
 }
 

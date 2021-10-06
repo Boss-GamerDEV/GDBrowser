@@ -1,0 +1,40 @@
+Template Server (For Servers.json)
+
+The normal template (FOR THE MIDDLE)'
+
+  {
+    "name": "Server name",
+    "link": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "author": "Creator",
+    "authorLink": "https://example.com",
+    "id": "",
+    "endpoint": "http://www.boomlings.com/database/",
+    "timestampSuffix": " ago",
+    "demonList": "https://pointercrate.com/",
+    "downloadsDisabled": false,
+    "pinned": false
+  },
+  
+  
+  
+  
+  The ending template (FOR THE END OF FILE)'
+
+  {
+    "name": "Server name",
+    "link": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "author": "Creator",
+    "authorLink": "https://example.com",
+    "id": "",
+    "endpoint": "http://www.boomlings.com/database/",
+    "timestampSuffix": " ago",
+    "demonList": "https://pointercrate.com/",
+    "downloadsDisabled": false,
+    "pinned": false
+  }
+  
+  More settings:
+   disabled": ["option", "option2"]
+    "onePointNine": true/false,
+    "weeklyLeaderboard": true/false,
+     "demonList": "https://example.com",

@@ -13,6 +13,19 @@
   },
   
   {
+    "name": "Geometry Dash Unblocked",
+    "link": "https://store.steampowered.com/app/322170/Geometry_Dash/",
+    "author": "RobTop",
+    "authorLink": "https://www.youtube.com/channel/UCz_yk8mDSAnxJq0ar66L4sw",
+    "id": "allow",
+    "endpoint": "http://www.boomlings.com/database/",
+    "timestampSuffix": " ago",
+    "demonList": "https://pointercrate.com/",
+    "downloadsDisabled": false,
+    "pinned": false
+  },
+  
+  {
     "name": "2.2 Unlocked",
     "link": "https://smjs.eu/gd/unlock/database/dashboard/",
     "author": "SMJS",
